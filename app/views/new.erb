@@ -1,54 +1,42 @@
-<!DOCTYPE html>
+<h1><%= @title1 %></h1>
+<% unless @title2 == "" %>
+  <h4><%= @title2 %></h4>
+<% end %>
 
-<html lang="en">
-  <head>
-    <title>Add a New Show</title>
-  </head>
+<form action="/television_shows/new" method="post">
+  <p>
+    <label for="title">Title</label>
+    <input type="text" name="title" id="title" value="" />
+  </p>
 
-	<body>
-    <h1><%= @title1 %></h1>
-    <% unless @title2 == "" %>
-	    <h4><%= @title2 %></h4>
-	  <% end %>
+  <p>
+    <label for="network">Network</label>
+    <input type="text" name="network" id="network" value="" />
+  </p>
 
+  <p>
+    <label for="starting_year">Starting Year</label>
+    <input type="text" name="starting_year" id="Starting Year" value="" />
+  </p>
 
-		<form action="/television_shows/new" method="post">
-      <p>
-  	  	<label for="title">Title</label>
-  	  	<input type="text" name="title" id="title" value="" />
-      </p>
+  <p>
+    <label for="synopsis">Synopsis</label>
+    <input type="text" name="synopsis" id="Synopsis" value="" />
+  </p>
 
-      <p>
-	  	  <label for="network">Network</label>
-	  	  <input type="text" name="network" id="network" value="" />
-      </p>
+  <div>
+    <label for="Genre">Genre</label>
+    <select name="genre" id="Genre"  value="<%= @prior_genre %>">>
+      <% @genres.each do |entry| %>
+      <option value="<%= entry %>" <%= if (entry == @prior_genre) then "selected" end %>><%= entry %></option>
+      <% end %>
+    </select>
+  </div>
 
-      <p>
-	  	  <label for="starting_year">Starting Year</label>
-	  	  <input type="text" name="starting_year" id="Starting Year" value="" />
-      </p>
+  <div>
+    <input type="submit" name="Add TV Show" id="Add TV Show" value="Add TV Show" />
+  </div>
 
-      <p>
-	  	  <label for="synopsis">Synopsis</label>
-	  	  <input type="text" name="synopsis" id="Synopsis" value="" />
-      </p>
-
-		<div>
-	  	<label for="Genre">Genre</label>
-      <select name="genre" id="Genre"  value="<%= @prior_genre %>">>
-        <% @genres.each do |entry| %>
-          <option value="<%= entry %>" <%= if (entry == @prior_genre) then "selected" end %>><%= entry %></option>
-        <% end %>
-      </select>
-    </div>
-
-		<div>
-    	<input type="submit" name="Add TV Show" id="Add TV Show" value="Add TV Show" />
-		</div>
-
-		<div>
-			<a href="/television_shows">See all Television Shows</a>
-  	</div>
-
-	</body>
-</html>
+  <div>
+    <a href="/television_shows">See all Television Shows</a>
+  </div>
