@@ -1,7 +1,6 @@
 require "sinatra"
 require "csv"
-require "pry"
-require_relative "app/models/television_show"
+require_relative "models/television_show"
 
 set :views, File.join(File.dirname(__FILE__), "app/views")
 enable :sessions

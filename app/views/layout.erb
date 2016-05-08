@@ -1,10 +1,42 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>TV Listings</title>
-  </head>
-  <body>
-    <%= yield %>
-  </body>
+<head>
+	<title>TV Shows</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="/vendor/bootstrap/css/application.css" rel="stylesheet">
+	<link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<style>
+	body {
+		background-image: url('http://www.hdwallpapera.com/wp-content/uploads/wallpaper/dmhdwallpapers/wallpapers-010/Dark%20Background%20Free%20Download.jpg');
+		background-size: 1200px;
+		color: #999999;
+	}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<nav class="navbar navbar-inverse" role="navigation">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="/television_shows">Home</a></li>
+					<li><a href="/television_shows/new">New</a></li>
+				</ul>
+			</li>
+
+		</ul>
+	</div>
+</nav>
+<%= yield %>
+</div>
+<script src="/vendor/jquery-1.9.1.min.js"></script>
+<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+</body>
 </html>
