@@ -1,6 +1,6 @@
 # TV Show Lister
 
-This is an app that allows users to add their favorite shows to a list of TV shows. The list keeps track of details about the show based on the user input.
+This is an app that allows users to add their favorite shows to a list of TV shows. The lister keeps track of details about the show based on the user input, via `television-shows.csv`.
 
 I built this mainly to practice acceptance testing using Capybara. All features have an associated user story, as well as an acceptance test ensuring it works as expected. I wrote each test first, then let the failing test drive my development.
 
